@@ -174,6 +174,8 @@ To improve generalization and detection robustness, an additional emergency vehi
   https://universe.roboflow.com/avanthika-s-nfpex/indian-emergency-vehicles
 
 Both datasets were merged and extensively processed to create a cleaner and more balanced dataset.
+And uploaded in Kaggle dataset
+DATASET_LINK:-https://www.kaggle.com/datasets/subham12098/balanced-dataset
 
 ### Dataset Processing Steps
 - Duplicate image removal
