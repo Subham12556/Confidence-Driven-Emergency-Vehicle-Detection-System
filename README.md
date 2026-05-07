@@ -146,6 +146,8 @@ Custom emergency vehicle dataset containing:
 - Fire Truck
 - Police Vehicle
 - Non-Emergency Vehicles
+DATASET_LINK:-
+https://www.kaggle.com/datasets/subham12098/balanced-dataset/data
 
 ### Dataset Processing
 - Duplicate removal
@@ -163,10 +165,16 @@ Custom emergency vehicle dataset containing:
 
 ### Primary Dataset
 - sireNNet
+DATASET_LINK:-
+https://data.mendeley.com/datasets/j4ydzzv4kb/1
 
 ### Cross-Dataset Evaluation
 - UrbanSound8K
+DATASET_LINK:-
+https://urbansounddataset.weebly.com/urbansound8k.html
 - ESC-50
+DATASET_LINK:-
+https://github.com/karolpiczak/ESC-50
 
 ### Audio Augmentation Techniques
 - Time shifting
