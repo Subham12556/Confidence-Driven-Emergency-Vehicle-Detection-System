@@ -138,28 +138,82 @@ based on the final fusion score.
 
 ---
 
-# 📂 Dataset Information
+# 🔄 Dataset Evolution & Model Optimization
 
-## 📸 Image Dataset
-Custom emergency vehicle dataset containing:
-- Ambulance
-- Fire Truck
-- Police Vehicle
-- Non-Emergency Vehicles
-DATASET_LINK:-
-https://www.kaggle.com/datasets/subham12098/balanced-dataset/data
+The development process of the proposed system was carried out in multiple stages to ensure reliable model selection and performance improvement.
 
-### Dataset Processing
-- Duplicate removal
-- Invalid annotation correction
-- Dataset balancing
-- Noise reduction
-- Data augmentation
+## 📌 Initial Training Phase
 
-### Final Dataset Size
-- 37K+ processed images
+Initially, the system was trained using the following emergency vehicle dataset:
+
+- Indian Emergency Vehicles Dataset (Initial Dataset)  
+  https://universe.roboflow.com/prajwal-awbcb/indian-emergency-vehicles-gleo6-zz3wu
+
+Multiple YOLO variants were evaluated on this dataset, including:
+- YOLOv8
+- YOLOv11
+- YOLOv12
+
+### Initial Model Comparison
+
+| Model | Precision | Recall | mAP@50 |
+|---|---|---|---|
+| YOLOv8 | 0.893 | 0.705 | 0.780 |
+| YOLOv11 | 0.859 | 0.728 | 0.787 |
+| YOLOv12 | 0.874 | 0.731 | 0.804 |
+
+Among all variants, **YOLOv12 achieved the highest mAP and recall**, demonstrating better overall detection capability and fewer missed detections. Therefore, YOLOv12 was selected as the base architecture for further enhancement.
 
 ---
+
+## 📌 Dataset Expansion & Balancing
+
+To improve generalization and detection robustness, an additional emergency vehicle dataset was integrated:
+
+- Additional Indian Emergency Vehicle Dataset  
+  https://universe.roboflow.com/avanthika-s-nfpex/indian-emergency-vehicles
+
+Both datasets were merged and extensively processed to create a cleaner and more balanced dataset.
+
+### Dataset Processing Steps
+- Duplicate image removal
+- Invalid annotation correction
+- Class balancing
+- Oversampling of minority classes
+- Reduction of excessive non-emergency samples
+- Advanced augmentation
+- Dataset cleaning and normalization
+
+### Final Processed Dataset
+- 37K+ balanced images
+- Improved class distribution
+- Better environmental diversity
+- Enhanced robustness for real-world scenarios
+
+---
+
+## 📌 Custom YOLOv12 Enhancement
+
+After dataset optimization, YOLOv12 was further modified and retrained using:
+- P2 detection layer integration
+- Enhanced feature fusion
+- Optimized augmentation pipeline
+- High-recall focused training strategy
+
+### Final Modified YOLOv12 Performance
+
+| Metric | Score |
+|---|---|
+| mAP@50 | 0.8855 |
+| mAP@50-95 | 0.5854 |
+| Recall | 0.8284 |
+| Precision | 0.9128 |
+
+The modified YOLOv12 model significantly outperformed the baseline models, particularly in:
+- Small-object detection
+- Dense traffic scenarios
+- Real-world robustness
+- Recall performance
 
 ## 🔉 Audio Dataset
 
@@ -186,33 +240,7 @@ https://github.com/karolpiczak/ESC-50
 
 ---
 
-# 🔬 Vision Model Comparison
 
-| Model | Precision | Recall | mAP@50 |
-|---|---|---|---|
-| YOLOv8 | 0.893 | 0.705 | 0.780 |
-| YOLOv11 | 0.859 | 0.728 | 0.787 |
-| YOLOv12 | 0.874 | 0.731 | 0.804 |
-
-YOLOv12 achieved the best balance between:
-- Precision
-- Recall
-- Overall detection quality
-
-Therefore, YOLOv12 was selected and further modified.
-
----
-
-# 🚀 Modified YOLOv12 Performance
-
-| Metric | Score |
-|---|---|
-| mAP@50 | 0.8855 |
-| mAP@50–95 | 0.5854 |
-| Recall | 0.8284 |
-| Precision | 0.9128 |
-
----
 
 # 🔊 Audio Model Performance
 
